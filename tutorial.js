@@ -8,7 +8,3 @@
 //     }
 // }
 // module.exports = {sum : sum,PI : PI,SomeMathObject : SomeMathObject};
-
-
-
-// 2.The Event Module and EventEmitter Class 
