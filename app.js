@@ -78,42 +78,42 @@
 
 // 4. Working with the File System Module Part-1
 
-const fs = require('fs');
+// const fs = require('fs');
 
-// Create a file
-fs.writeFile('example.txt', 'This is an example file created by Node.js', (err) => {
-    if (err)
-        console.log(err);
-    else{
-        console.log('File created successfully');
-        fs.readFile('example.txt','utf-8', (err,file) => {
-            if(err)
-                console.log(err);
-            else{
-                console.log(file);
-            }
-        }
-        );
-    }
-});
+// // Create a file
+// fs.writeFile('example.txt', 'This is an example file created by Node.js', (err) => {
+//     if (err)
+//         console.log(err);
+//     else{
+//         console.log('File created successfully');
+//         fs.readFile('example.txt','utf-8', (err,file) => {
+//             if(err)
+//                 console.log(err);
+//             else{
+//                 console.log(file);
+//             }
+//         }
+//         );
+//     }
+// });
 
-fs.rename('example.txt','example2.txt', (err) => {
-    if (err)
-        console.log(err);
-    else
-        console.log('Successfully renamed the file');
-}) 
+// fs.rename('example.txt','example2.txt', (err) => {
+//     if (err)
+//         console.log(err);
+//     else
+//         console.log('Successfully renamed the file');
+// }) 
 
-fs.appendFile('example2.txt','Some data being appended to the file', (err) => {
-    if (err)
-        console.log(err)
-    else
-        console.log('Data appended successfully');
-});
+// fs.appendFile('example2.txt','Some data being appended to the file', (err) => {
+//     if (err)
+//         console.log(err)
+//     else
+//         console.log('Data appended successfully');
+// });
 
-fs.unlink('example2.txt', (err) => {
-    if (err)
-        console.log(err);
-    else
-        console.log('Successfully deleted the file');
-})
+// fs.unlink('example2.txt', (err) => {
+//     if (err)
+//         console.log(err);
+//     else
+//         console.log('Successfully deleted the file');
+// })
