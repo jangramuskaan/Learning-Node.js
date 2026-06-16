@@ -43,32 +43,77 @@
 
 // // 3. Working with the ReadLine Module 
 
-const readline = require('readline');
-const rl = readline.createInterface({input : process.stdin, output : process.stdout});
-let num1 = Math.floor(Math.random() *10 + 1);
-let num2 = Math.floor(Math.random() *10 + 1);
-let answer = num1 + num2;
+// const readline = require('readline');
+// const rl = readline.createInterface({input : process.stdin, output : process.stdout});
+// let num1 = Math.floor(Math.random() *10 + 1);
+// let num2 = Math.floor(Math.random() *10 + 1);
+// let answer = num1 + num2;
 
-rl.question(`What is ${num1} + ${num2} ? \n`,
-(userInput) =>{
-    if(userInput.trim() == answer){
-        rl.close();
-    }
+// rl.question(`What is ${num1} + ${num2} ? \n`,
+// (userInput) =>{
+//     if(userInput.trim() == answer){
+//         rl.close();
+//     }
+//     else{
+//         rl.setPrompt('Incorrect response, Please try again \n');
+//         rl.prompt();
+//         rl.on('line',(userInput)=>{
+//             if (userInput.trim() == answer)
+//                 rl.close();
+//             else{
+//                 rl.setPrompt(`Your answer of ${userInput} is incorrect, Please try again \n`);
+//                 rl.prompt();
+//             }
+
+//         })
+//     }
+// });
+
+// rl.on('close', () => {
+//     console.log('Hey! you got the answer right!');
+// });
+
+
+
+
+// 4. Working with the File System Module Part-1
+
+const fs = require('fs');
+
+// Create a file
+fs.writeFile('example.txt', 'This is an example file created by Node.js', (err) => {
+    if (err)
+        console.log(err);
     else{
-        rl.setPrompt('Incorrect response, Please try again \n');
-        rl.prompt();
-        rl.on('line',(userInput)=>{
-            if (userInput.trim() == answer)
-                rl.close();
+        console.log('File created successfully');
+        fs.readFile('example.txt','utf-8', (err,file) => {
+            if(err)
+                console.log(err);
             else{
-                rl.setPrompt(`Your answer of ${userInput} is incorrect, Please try again \n`);
-                rl.prompt();
+                console.log(file);
             }
-
-        })
+        }
+        );
     }
 });
 
-rl.on('close', () => {
-    console.log('Hey! you got the answer right!');
+fs.rename('example.txt','example2.txt', (err) => {
+    if (err)
+        console.log(err);
+    else
+        console.log('Successfully renamed the file');
+}) 
+
+fs.appendFile('example2.txt','Some data being appended to the file', (err) => {
+    if (err)
+        console.log(err)
+    else
+        console.log('Data appended successfully');
 });
+
+fs.unlink('example2.txt', (err) => {
+    if (err)
+        console.log(err);
+    else
+        console.log('Successfully deleted the file');
+})
