@@ -123,41 +123,41 @@
 
 // 4. Working with the File System Module Part-1
 
-const fs = require('fs');
-fs.mkdir('tutorial', (err) => {
-    if(err)
-        console.log(err);
-    else
-    fs.writeFile('./tutorial/example.txt','123', (err) => {
-        if(err)
-            console.log(err);
-        else
-            console.log('File created successfully');
-        });
-});
+// const fs = require('fs');
+// fs.mkdir('tutorial', (err) => {
+//     if(err)
+//         console.log(err);
+//     else
+//     fs.writeFile('./tutorial/example.txt','123', (err) => {
+//         if(err)
+//             console.log(err);
+//         else
+//             console.log('File created successfully');
+//         });
+// });
 
-fs.unlink('./tutorial/example.txt', (err) => {
-    if (err)
-        console.log(err);
-    else
-      fs.rmdir('tutorial', (err) => {
-    if (err)
-        console.log(err);
-    else
-        console.log('Directory deleted successfully');
-});  
-});
+// fs.unlink('./tutorial/example.txt', (err) => {
+//     if (err)
+//         console.log(err);
+//     else
+//       fs.rmdir('tutorial', (err) => {
+//     if (err)
+//         console.log(err);
+//     else
+//         console.log('Directory deleted successfully');
+// });  
+// });
 
-fs.readdir('example', (err, files) => {
-    if(err)
-        console.log(err);
-    else
-        for (let file of files){
-            fs.unlink('./example/' + file, (err) => {
-                if (err)
-                    console.log(err);
-                else
-                    console.log('Successfully Deleted file');
-            });
-};
-});
+// fs.readdir('example', (err, files) => {
+//     if(err)
+//         console.log(err);
+//     else
+//         for (let file of files){
+//             fs.unlink('./example/' + file, (err) => {
+//                 if (err)
+//                     console.log(err);
+//                 else
+//                     console.log('Successfully Deleted file');
+//             });
+// };
+// });
