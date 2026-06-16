@@ -36,6 +36,8 @@
 // muskaan.on('name', () =>{
 //     console.log("My name is ", muskaan.name)
 // });
+// muskaan.emit('name');
+// christina.emit('name');
 
 
 
@@ -70,5 +72,3 @@ rl.question(`What is ${num1} + ${num2} ? \n`,
 rl.on('close', () => {
     console.log('Hey! you got the answer right!');
 });
-// muskaan.emit('name');
-// christina.emit('name');
