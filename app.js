@@ -195,9 +195,28 @@
 
 // 7. Pipes and Pipe Chaining
 
-const fs = require('fs');
-const zlib = require('zlib');                                                    // for compression and decompression of files
-const gunzip = zlib.createGunzip();
-const readStream = fs.createReadStream('./example2.txt.gz');
-const writeStream = fs.createWriteStream('uncompressed.txt');
-readStream.pipe(gunzip).pipe(writeStream);
+// const fs = require('fs');
+// const zlib = require('zlib');                                                    // for compression and decompression of files
+// const gunzip = zlib.createGunzip();
+// const readStream = fs.createReadStream('./example2.txt.gz');
+// const writeStream = fs.createWriteStream('uncompressed.txt');
+// readStream.pipe(gunzip).pipe(writeStream);
+
+
+
+
+// 8.Creating HTTP Server and HTTP Module
+
+const http = require('http');
+const server = http.createServer((req,res) => {
+    if(req.url === '/'){
+        res.write('Hello World from Nodejs');
+        res.end();
+    }
+    else{
+        res.write('using some other domain');
+        res.end();
+    }
+});
+
+server.listen('3000');
