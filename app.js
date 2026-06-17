@@ -172,3 +172,21 @@ const writeStream = fs.createWriteStream('example2.txt');
 readStream.on('data', (chunk) => {
     writeStream.write(chunk);
 });
+
+
+
+
+// 6.Why you should use Streams
+
+const fs =require('fs');
+// fs.readFile('largefile.txt', (err,file) => {
+//     if(err)
+//         console.log(err);
+//     else
+//         console.log(file);
+// })
+
+const readStream = fs.createReadStream('largefile.txt','utf-8');
+readStream.on('data',(chunk) => {
+    console.log(chunk);
+});
