@@ -178,7 +178,7 @@
 
 // 6.Why you should use Streams
 
-const fs =require('fs');
+// const fs =require('fs');
 // fs.readFile('largefile.txt', (err,file) => {
 //     if(err)
 //         console.log(err);
@@ -186,7 +186,18 @@ const fs =require('fs');
 //         console.log(file);
 // })
 
-const readStream = fs.createReadStream('largefile.txt','utf-8');
-readStream.on('data',(chunk) => {
-    console.log(chunk);
-});
+// const readStream = fs.createReadStream('largefile.txt','utf-8');
+// readStream.on('data',(chunk) => {
+//     console.log(chunk);
+// });
+
+
+
+// 7. Pipes and Pipe Chaining
+
+const fs = require('fs');
+const zlib = require('zlib');                                                    // for compression and decompression of files
+const gunzip = zlib.createGunzip();
+const readStream = fs.createReadStream('./example2.txt.gz');
+const writeStream = fs.createWriteStream('uncompressed.txt');
+readStream.pipe(gunzip).pipe(writeStream);
